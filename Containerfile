@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && DEBIAN_FRONTEND=noninteractive 
 
 WORKDIR /tmp
 
-RUN curl https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.bz2 -o boost.tar.bz2 \
+RUN curl -L https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.bz2 -o boost.tar.bz2 \
   && echo "7009fe1faa1697476bdc7027703a2badb84e849b7b0baad5086b087b971f8617	boost.tar.bz2" > boost.sha256 \
   && sha256sum -c boost.sha256 \
   && mkdir -p /usr/include/boost \
