@@ -32,6 +32,10 @@ RUN curl https://raw.githubusercontent.com/boostorg/beast/develop/example/http/s
 
 RUN echo "Hello World" > /srv/index.html
 
+RUN groupadd -r user \
+  && useradd -r -g user user
+USER user
+
 CMD http-server-async 0.0.0.0 8080 /srv 1
 
 HEALTHCHECK CMD curl -f "http://localhost:8080" || exit 1
