@@ -30,7 +30,7 @@ RUN curl https://raw.githubusercontent.com/boostorg/beast/develop/example/http/s
   && g++ http_server_async.cpp -o http-server-async \
   && install http-server-async /usr/local/bin/
 
-RUN echo "Hello World" > /srv/index.html
+RUN echo "Hello World!" > /srv/index.html
 
 RUN groupadd -r user \
   && useradd -r -g user user
